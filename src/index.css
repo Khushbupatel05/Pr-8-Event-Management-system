@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.login-btn{
+    width: 40px;
+    height: 100%;
+    display: block;
+    line-height: 40px;
+    border-radius: 100%;
+    color: #ffffff;
+    border: 3px solid #d99c18;
+}
+.bg-1{
+    background-image: url('img/slider-bg5.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: block;
+
+}

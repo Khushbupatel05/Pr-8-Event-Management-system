@@ -1,14 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { list } from "postcss";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
+const value = JSON.parse(localStorage.getItem("list")) || []
+console.log(value);
 
-const eventSlice = createSlice({
-    name:"event",
-    initialState:{
-        list: [],
+const eventsSlice = createSlice({
+  name: "events",
+  initialState: {
+    list:value 
+  },
+  reducers: {
+    addEvent: (state, action) => {
+      state.list.push({ id: nanoid(), ...action.payload })
+      localStorage.setItem("list", JSON.stringify(state.list));
     },
-    reducers: {
-
+    deleteEvent: (state, action) => {
+      const removeEvnt = state.list.filter((evnt) => {
+        return evnt.id != action.payload
+      })
+      state.list = removeEvnt
+      localStorage.setItem("list", JSON.stringify(state.list));
     }
-})
+  }
+});
 
-export default eventSlice.reducer;
+export const { addEvent, deleteEvent } = eventsSlice.actions;
+export default eventsSlice.reducer;

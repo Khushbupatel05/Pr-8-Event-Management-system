@@ -1,0 +1,61 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom"
+
+const Header = () => {
+    const { pathname } = useLocation();
+    const [menu, setMenu] = useState(false);
+
+    return (
+        <>
+            <header className='shadow-sm fixed top-0 left-0 w-full z-50'>
+                <div className='container mx-auto'>
+                    <nav className="border-gray-200 dark:bg-gray-900">
+                        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                            <img src="/img/logo.png" alt="logo" />
+                            {/* <img src="/img/0.site-logo.png" alt="logo" /> */}
+
+                            <div className={`flex w-full md:block md:w-auto ${menu ? "block" : "hidden"} md:flex`} id="navbar-default">
+                                <ul className="font-medium flex items-center flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                                    <li>
+                                        <Link to={"/"} className={`${pathname == "/" ? "bg-[] p-1" : "text-white"}`}>Home</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={"/services"} className="block py-2 px-3 text-gray-900 rounded-sm md:hover:bg-transparent md:border-0 md:hover:text-orange-300 md:p-0 ">
+                                            Services
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to={"/events"} className="block py-2 px-3 text-gray-900 rounded-sm md:hover:bg-transparent md:border-0 md:hover:text-orange-300 md:p-0 ">
+                                           Events
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to={"/contact"} className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-300 md:p-0 ">
+                                            Contact
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="flex items-center gap-5">
+                                <div className="md:hidden">
+                                    <button onClick={() => setMenu(!menu)} className="text-white text-2xl">
+                                        {menu ? '✕' : '☰'}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className='text-orange-500 block rounded-full border'>
+                                <button className='text-xl login-btn'>
+                                    <i className="ri-user-3-fill text-white"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </>
+    )
+}
+
+export default Header;
