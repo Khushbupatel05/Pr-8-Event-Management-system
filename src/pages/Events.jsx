@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 const Events = () => {
   const data = useSelector((state) => {
     return state.reducer.list
-
   } );
   
   const navigate = useNavigate();
 
   return (
-    <div className='container mx-auto'>
+    
+    <div className='container mx-auto '>
       <div className='pt-40 flex justify-between my-4'>
         <div><h1 className='font-bold text-4xl'>Events Data</h1></div>
         <button 

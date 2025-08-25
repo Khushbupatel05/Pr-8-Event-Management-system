@@ -13,8 +13,8 @@ const EventTable = ({ data }) => {
 
   return (
     <>
-      <section>
-        <div className="container relative overflow-x-auto shadow-md sm:rounded-lg">
+      <section className="">
+        <div className="container relative overflow-x-auto shadow-md sm:rounded-lg ">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
 
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -54,7 +54,7 @@ const EventTable = ({ data }) => {
                       {evnt.category}
                     </td>
                     <td className="px-6 py-4">
-                      {evnt.Date}
+                      {evnt.date}
                     </td>
                     <td className="px-6 py-4">
                       {evnt.venue}
@@ -66,11 +66,15 @@ const EventTable = ({ data }) => {
                       <span className="text-green-600 font-semibold">Active</span>
                     </td>
                     <td className="px-6 py-4 flex gap-3">
-                      <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
-                      <button
-                        className="font-medium text-red-600 dark:text-red-500 hover:underline "
-                        onClick={() => handleDelete(evnt.id)}
+                       <Link
+                        to={`/edit-event/${evnt.id}`}
+                        className="font-medium text-blue-600 dark:text-blue-500"
                       >
+                        Edit
+                      </Link>
+                      <button
+                        className="font-medium text-red-600 dark:text-red-500 "
+                        onClick={() => handleDelete(evnt.id)} >
                         Delete
                       </button>
                     </td>
@@ -79,9 +83,7 @@ const EventTable = ({ data }) => {
                   <td colSpan={7} className="p-5 text-center text-2xl font-bold">No Data Found</td>
                 </tr>
               }
-
             </tbody>
-
           </table>
         </div>
       </section>
