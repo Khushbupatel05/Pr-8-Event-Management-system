@@ -36,7 +36,6 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Event Section */}
                     <div className="text-center text-white max-w-2xl mt-10 lg:mt-0">
                         <div className="flex justify-center gap-4 mb-6 flex-wrap sm:flex-nowrap">
                             <div className="border-2 px-4 py-2 rounded-xl">

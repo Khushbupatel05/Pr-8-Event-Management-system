@@ -7,6 +7,8 @@ import AddEvent from "./pages/AddEvent"
 import EditEvent from "./pages/EditEvent"
 import ProtectedRoute from "./Componenets/ProtectedRoute"
 import { ToastContainer } from "react-toastify"
+import Contact from "./pages/Contact"
+import About from "./pages/About"
 
 
 
@@ -19,6 +21,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<ProtectedRoute Component={Events} />} />
           <Route path="/login" element={<ProtectedRoute Component={Login} />} />
           <Route path="/add-event" element={<ProtectedRoute Component={AddEvent}/>} />

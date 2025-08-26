@@ -31,9 +31,9 @@ const EventTable = ({ data }) => {
                 <th scope="col" className="px-6 py-3">
                   Venue
                 </th>
-                <th scope="col" className="px-6 py-3">
+                {/* <th scope="col" className="px-6 py-3">
                   Tickets
-                </th>
+                </th> */}
                 <th scope="col" className="px-6 py-3">
                   Status
                 </th>
@@ -59,9 +59,9 @@ const EventTable = ({ data }) => {
                     <td className="px-6 py-4">
                       {evnt.venue}
                     </td>
-                    <td className="px-6 py-4">
+                    {/* <td className="px-6 py-4">
                       {evnt.tickets}
-                    </td>
+                    </td> */}
                     <td className="px-6 py-4">
                       <span className="text-green-600 font-semibold">Active</span>
                     </td>
