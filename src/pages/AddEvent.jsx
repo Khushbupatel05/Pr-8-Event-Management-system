@@ -7,6 +7,7 @@ const AddEvent = () => {
     const [input, setInput] = useState({
         name: '', category: '', date: '', venue: ''
     })
+    const [errors, setErrors] = useState({})
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,6 +18,29 @@ const AddEvent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        let validateErrors = {}
+
+        if (input.name.trim() === "") {
+            validateErrors.name = "Enter Event Name !";
+        }
+
+        if (input.category.trim() === "") {
+            validateErrors.category = "Select Category !";
+        }
+
+        if (input.date.trim() === "") {
+            validateErrors.date = "Select Date !";
+        }
+
+        if (input.venue.trim() === "") {
+            validateErrors.venue = "Enter Venue !";
+        }
+
+        setErrors(validateErrors)
+
+        if (Object.keys(validateErrors).length > 0) return;
+        
         dispatch(addEvent(input))
         navigate('/Events')
     }
@@ -41,28 +65,32 @@ const AddEvent = () => {
 
                         <div>
                             <label className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">Event Name</label>
-                            <input type="text" name="name" id='name' value={input.name} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" placeholder="Enter event name" required />
+                            <input type="text" name="name" id='name' value={input.name} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" placeholder="Enter event name" />
+                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                         </div>
 
                         <div>
                             <label className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">Category</label>
-                            <select name="category" id='category' value={input.category} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" required>
+                            <select name="category" id='category' value={input.category} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" >
                                 <option value="">-- Select Category --</option>
                                 <option value="Music">Music</option>
                                 <option value="Dance">Dance</option>
                                 <option value="Tech">Tech</option>
                                 <option value="Sports">Sports</option>
                             </select>
+                            {errors.category && <p className="text-red-500 text-sm mt-1">{errors.category}</p>}
                         </div>
 
                         <div>
                             <label className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">Date</label>
-                            <input type="date" name="date" id='date' value={input.date} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" required />
+                            <input type="date" name="date" id='date' value={input.date} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" />
+                            {errors.date && <p className="text-red-500 text-sm mt-1">{errors.date}</p>}
                         </div>
 
                         <div>
                             <label className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">Venue</label>
-                            <input type="text" name="venue" id='venue' value={input.venue} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" placeholder="Enter venue" required />
+                            <input type="text" name="venue" id='venue' value={input.venue} onChange={handleChange} className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-orange-500 focus:outline-none" placeholder="Enter venue" />
+                            {errors.venue && <p className="text-red-500 text-sm mt-1">{errors.venue}</p>}
                         </div>
 
                         <div className="text-center">

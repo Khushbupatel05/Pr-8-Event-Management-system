@@ -9,6 +9,7 @@ import ProtectedRoute from "./Componenets/ProtectedRoute"
 import { ToastContainer } from "react-toastify"
 import Contact from "./pages/Contact"
 import About from "./pages/About"
+import Services from "./pages/Services"
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<ProtectedRoute Component={Events} />} />
           <Route path="/login" element={<ProtectedRoute Component={Login} />} />

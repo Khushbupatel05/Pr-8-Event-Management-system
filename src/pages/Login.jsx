@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
    <section className="">
-      <div className="justify-center min-h-screen bg-[#dcf3f0] flex items-center md:h-[90vh] p-3">
+      <div className="justify-center min-h-screen  flex items-center md:h-[90vh] p-3">
         <div className="w-full bg-white rounded-xl shadow-md sm:max-w-md p-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-6">sign in </h1>
           <form className="space-y-5" onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ const Login = () => {
               <label htmlFor="password" className="block mb-1 text-sm font-semibold text-gray-900"> Password </label>
               <input onChange={handleChange} type="password" name="password" id="password" placeholder="Password" className="bg-gray-100 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-2 focus:outline-none focus:ring-2 focus:ring-teal-600" />
             </div>
-            <button type="submit" className="w-full bg-[#1ca593] hover:bg-[#32756c] text-white text-sm font-semibold py-3 rounded-sm transition-all duration-300">
+            <button type="submit" className="w-full bg-[#db7209] hover:bg-[#de925b] text-white text-sm font-semibold py-3 rounded-sm transition-all duration-300">
               Log In
             </button>
           </form>

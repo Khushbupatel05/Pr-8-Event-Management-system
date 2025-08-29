@@ -26,16 +26,16 @@ const Header = () => {
                         <img src={isHome ? "/img/logo.png" : "/img/0.site-logo.png"} className="max-[354px]:w-24 h-auto" alt="logo" />
                     </Link>
 
-                  
+
                     <div className="hidden md:flex flex-1 justify-center">
                         <ul className="font-semibold flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
                             <li>
                                 <Link to={"/"} className={`${pathname === "/" ? "text-[#b58441]" : isHome ? "text-white" : "text-black"} hover:text-[#F29727] transition-colors duration-300`}>Home</Link>
                             </li>
-                             <li>
+                            <li>
                                 <Link to={"/about"} className={`${pathname === "/services" ? "text-[#b58441]" : isHome ? "text-white" : "text-black"} hover:text-[#F29727] transition-colors duration-300`}>About Us</Link>
                             </li>
-                            
+
                             <li>
                                 <Link to={"/services"} className={`${pathname === "/services" ? "text-[#b58441]" : isHome ? "text-white" : "text-black"} hover:text-[#F29727] transition-colors duration-300`}>Services</Link>
                             </li>
@@ -50,23 +50,23 @@ const Header = () => {
                         </ul>
                     </div>
 
-                   
+
                     <div className="flex items-center gap-2">
                         {
-                                    isLoggedIn ? <button onClick={handleClick} type="button" className="md:flex hidden items-center gap-2 bg-[#b0804c] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
-                                        Logout
-                                        <i className="ri-logout-box-r-line text-white"></i>
-                                    </button> :
-                                        <button onClick={() => {
-                                            navigate("/login")
-                                        }} type="button" className="flex items-center gap-2 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
-                                            Login
-                                            <i className="ri-user-3-fill text-white"></i>
-                                            
-                                        </button>
-                                }
+                            isLoggedIn ? <button onClick={handleClick} type="button" className="md:flex hidden items-center gap-2 bg-[#b0804c] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
+                                Logout
+                                
+                            </button> :
+                                <button onClick={() => {
+                                    navigate("/login")
+                                }} type="button" className="flex items-center gap-2 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
+                                    Login
+                                    <i className="ri-user-3-fill text-white"></i>
 
-                        
+                                </button>
+                        }
+
+
                         <div className="md:hidden">
                             <button onClick={() => setMenu(!menu)} className={`${isHome ? "text-white" : "text-black"} text-2xl`}>
                                 {menu ? '✕' : '☰'}
@@ -103,21 +103,21 @@ const Header = () => {
                             )}
                         </ul>
 
-                      
+
                         <div className="mt-6">
-                           {
-                                    isLoggedIn ? <button onClick={handleClick} type="button" className="md:flex hidden items-center gap-2 bg-[#b0804c] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
-                                        Logout
-                                        <i className="ri-logout-box-r-line text-white"></i>
-                                    </button> :
-                                        <button onClick={() => {
-                                            navigate("/login")
-                                        }} type="button" className="flex items-center gap-2 bg-[#b4b258] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
-                                            Login
-                                            <i className="ri-user-3-fill text-white"></i>
-                                            
-                                        </button>
-                                }
+                            {
+                                isLoggedIn ? <button onClick={handleClick} type="button" className="md:flex hidden items-center gap-2 bg-[#b0804c] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
+                                    Logout
+                                    <i className="ri-logout-box-r-line text-white"></i>
+                                </button> :
+                                    <button onClick={() => {
+                                        navigate("/login")
+                                    }} type="button" className="flex items-center gap-2 bg-[#b4b258] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
+                                        Login
+                                        <i className="ri-user-3-fill text-white"></i>
+
+                                    </button>
+                            }
                         </div>
                     </div>
                 </div>
