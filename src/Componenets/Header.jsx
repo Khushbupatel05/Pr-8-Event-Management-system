@@ -59,7 +59,7 @@ const Header = () => {
                             </button> :
                                 <button onClick={() => {
                                     navigate("/login")
-                                }} type="button" className="flex items-center gap-2 border-white border-spacing-3 hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
+                                }} type="button" className="flex items-center gap-2  border-spacing-3 bg-orange-400 hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
                                     Login
                                     <i className="ri-user-3-fill text-white"></i>
 
@@ -89,6 +89,9 @@ const Header = () => {
                         <ul className="flex flex-col space-y-4 font-semibold mt-6">
                             <li>
                                 <Link onClick={() => setMenu(false)} to={"/"} className={`${pathname === "/" ? "text-[#b58441]" : "text-white"} hover:text-[#F29727] transition-colors duration-300`}>Home</Link>
+                            </li>
+                            <li>
+                                <Link to={"/about"} className={`${pathname === "/services" ? "text-[#b58441]" : isHome ? "text-white" : "text-black"} hover:text-[#F29727] transition-colors duration-300`}>About Us</Link>
                             </li>
                             <li>
                                 <Link onClick={() => setMenu(false)} to={"/services"} className={`${pathname === "/services" ? "text-[#b58441]" : "text-white"} hover:text-[#F29727] transition-colors duration-300`}>Services</Link>
