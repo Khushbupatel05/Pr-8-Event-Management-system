@@ -41,7 +41,7 @@ const Login = () => {
             </div>
             <div>
               <label htmlFor="password" className="block mb-1 text-sm font-semibold text-gray-900"> Password </label>
-              <input onChange={handleChange} type="password" name="password" id="password" placeholder="Password" className="bg-gray-100 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-2 focus:outline-none focus:ring-2 focus:ring-teal-600" />
+              <input onChange={handleChange} type="password" name="password" id="password" placeholder="Password" className="bg-gray-100 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-2 focus:outline-none focus:ring-2 focus:ring-orange-600" />
             </div>
             <button type="submit" className="w-full bg-[#db7209] hover:bg-[#de925b] text-white text-sm font-semibold py-3 rounded-sm transition-all duration-300">
               Log In

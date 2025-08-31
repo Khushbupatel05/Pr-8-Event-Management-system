@@ -19,7 +19,7 @@ const Header = () => {
     };
 
     return (
-        <header className={`${isHome ? "md:mt-[40px] m-0 bg-transparent" : "bg-white shadow-md"} fixed w-full z-50`}>
+        <header className={`${isHome ? " m-0 bg-transparent" : "bg-white shadow-md"} fixed w-full z-50`}>
             <nav className="container mx-auto">
                 <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
                     <Link to={"/"} className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -59,7 +59,7 @@ const Header = () => {
                             </button> :
                                 <button onClick={() => {
                                     navigate("/login")
-                                }} type="button" className="flex items-center gap-2 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
+                                }} type="button" className="flex items-center gap-2 border-white border-spacing-3 hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300 shadow-md">
                                     Login
                                     <i className="ri-user-3-fill text-white"></i>
 
